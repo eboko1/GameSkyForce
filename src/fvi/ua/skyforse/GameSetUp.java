@@ -11,6 +11,7 @@ public class GameSetUp implements  Runnable {
     private  boolean running;
 
     private Thread thread;
+    private Display display;
 
     public GameSetUp(String title, int width, int height){
         this.title=title;
@@ -18,14 +19,21 @@ public class GameSetUp implements  Runnable {
         this.height=height;
     }
 
+    public  void init(){
+
+    }
+
     public synchronized void start(){
+        if (running) return;
+        running = true;
         if (thread==null) {
             thread = new Thread(this);
             thread.start();
         }
     }
     public synchronized  void  stop(){
-
+        if (!(running)) return;
+         running = false;
         try {
             thread.join();
         } catch (InterruptedException e) {
@@ -36,6 +44,7 @@ public class GameSetUp implements  Runnable {
 
     @Override
     public void run() {
+        init();
 
     }
 }
