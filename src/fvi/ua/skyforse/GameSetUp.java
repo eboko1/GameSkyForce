@@ -20,6 +20,7 @@ public class GameSetUp implements  Runnable {
     }
 
     public  void init(){
+        display = new Display(title,width,height);
 
     }
 
