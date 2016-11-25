@@ -15,6 +15,7 @@ public class GameSetUp implements  Runnable {
 
     private BufferStrategy buffer;
     private Graphics gr;
+    private int y;
 
 
     private Thread thread;
@@ -49,6 +50,7 @@ public class GameSetUp implements  Runnable {
         }
     }
     public  void tick(){
+        y=y+1;
 
     }
     public void render(){
@@ -62,7 +64,7 @@ public class GameSetUp implements  Runnable {
         gr.clearRect(0,0,width,height);
 
         //draw
-        gr.drawRect(0,0,60,60);
+        gr.fillRect(33,y,44,44);
         //end of draw
 
         buffer.show();
@@ -72,7 +74,20 @@ public class GameSetUp implements  Runnable {
     @Override
     public void run() {
         init();
-        while (running){tick();
-        render();
-      }}
+        int fps = 50;
+        double timePerTick=1000000000/fps;
+        double delta =0;
+        long current =System.nanoTime();
+
+
+        while (running){
+            delta=delta+(System.nanoTime()-current)/timePerTick;
+            current=System.nanoTime();
+            if(delta>=1){
+                tick();
+                render();
+                delta--;
+            }
+      }
+    }
 }
