@@ -7,6 +7,8 @@ import java.awt.image.BufferStrategy;
  * Created by Vika on 25.11.2016.
  */
 public class GameSetUp implements  Runnable {
+
+
     private String title;
     private int width;
     private int height;
@@ -22,8 +24,8 @@ public class GameSetUp implements  Runnable {
     private Thread thread;
     private Display display;
     private GameManager manager;
-    private  int gameWidth;
-    private  int gameHeight;
+    public static final int gameWidth=400;
+    public static final int gameHeight=400;
 
 
     public GameSetUp(String title, int width, int height){
@@ -37,8 +39,6 @@ public class GameSetUp implements  Runnable {
         //play zone
         manager= new GameManager();
         manager.init();
-        gameWidth =400;
-        gameHeight=400;
     }
 
     public synchronized void start(){

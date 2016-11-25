@@ -13,12 +13,15 @@ public class GameManager {
     }
 
     public void init(){
-    player = new Player();
+    player = new Player(GameSetUp.gameWidth/2,GameSetUp.gameHeight-30);
+
     }
     public void tick(){
+        player.tick();
 
     }
     public void render(Graphics gr){
+        player.render(gr);
         //gr.fillRect(0,0,80,80);
 
     }
