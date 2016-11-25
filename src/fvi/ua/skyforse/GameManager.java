@@ -6,19 +6,20 @@ import java.awt.*;
  * Created by Vika on 26.11.2016.
  */
 public class GameManager {
+    private Player player;
 
     public GameManager(){
 
     }
 
     public void init(){
-
+    player = new Player();
     }
     public void tick(){
 
     }
     public void render(Graphics gr){
-        gr.fillRect(0,0,80,80);
+        //gr.fillRect(0,0,80,80);
 
     }
 

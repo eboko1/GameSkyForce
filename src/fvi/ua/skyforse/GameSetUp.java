@@ -34,7 +34,9 @@ public class GameSetUp implements  Runnable {
 
     public  void init(){
         display = new Display(title,width,height);
+        //play zone
         manager= new GameManager();
+        manager.init();
         gameWidth =400;
         gameHeight=400;
     }
@@ -70,9 +72,11 @@ public class GameSetUp implements  Runnable {
         gr.clearRect(0,0,width,height);
 
         //draw
-       manager.render(gr);
 
-        gr.drawRect(0,0,gameWidth,gameHeight);
+        gr.setColor(Color.CYAN.WHITE);
+        gr.fillRect(50,50,gameWidth,gameHeight);
+
+        manager.render(gr);
         //end of draw
 
         buffer.show();

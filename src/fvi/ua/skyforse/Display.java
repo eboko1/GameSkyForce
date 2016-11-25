@@ -29,8 +29,10 @@ public class Display {
      frame.setResizable(false);
      frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+
      canvas = new Canvas();
      canvas.setPreferredSize(new Dimension(width,height));
+     canvas.setBackground(new Color(212,154,140));
      frame.add(canvas);
      frame.pack();
  }
