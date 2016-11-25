@@ -13,7 +13,7 @@ public class GameManager {
     }
 
     public void init(){
-    player = new Player(GameSetUp.gameWidth/2,GameSetUp.gameHeight-30);
+    player = new Player(GameSetUp.gameWidth/2,(GameSetUp.gameHeight-30)+50);
 
     }
     public void tick(){
