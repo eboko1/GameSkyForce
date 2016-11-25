@@ -62,9 +62,9 @@ public class GameSetUp implements  Runnable {
         gr.clearRect(0,0,width,height);
 
         //draw
-        gr.drawRect(0,0,width,height);
+        gr.drawRect(0,0,60,60);
         //end of draw
-        
+
         buffer.show();
         gr.dispose();
     }
@@ -72,9 +72,7 @@ public class GameSetUp implements  Runnable {
     @Override
     public void run() {
         init();
-        tick();
+        while (running){tick();
         render();
-
-    }
-
+      }}
 }
