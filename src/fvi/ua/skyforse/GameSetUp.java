@@ -18,8 +18,13 @@ public class GameSetUp implements  Runnable {
     private int y;
 
 
+
     private Thread thread;
     private Display display;
+    private GameManager manager;
+    private  int gameWidth;
+    private  int gameHeight;
+
 
     public GameSetUp(String title, int width, int height){
         this.title=title;
@@ -29,7 +34,9 @@ public class GameSetUp implements  Runnable {
 
     public  void init(){
         display = new Display(title,width,height);
-
+        manager= new GameManager();
+        gameWidth =400;
+        gameHeight=400;
     }
 
     public synchronized void start(){
@@ -50,9 +57,8 @@ public class GameSetUp implements  Runnable {
         }
     }
     public  void tick(){
-        y=y+1;
-
-    }
+        manager.tick();
+          }
     public void render(){
       buffer = display.getCanvas().getBufferStrategy();
         if (buffer==null){
@@ -64,7 +70,9 @@ public class GameSetUp implements  Runnable {
         gr.clearRect(0,0,width,height);
 
         //draw
-        gr.fillRect(33,y,44,44);
+       manager.render(gr);
+
+        gr.drawRect(0,0,gameWidth,gameHeight);
         //end of draw
 
         buffer.show();
