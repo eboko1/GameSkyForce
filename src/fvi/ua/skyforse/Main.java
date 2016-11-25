@@ -5,6 +5,7 @@ package fvi.ua.skyforse;
  */
 public class Main {
     public static void main (String[] args){
-        new Display("Created game Fransuh",500,600);
+        GameSetUp game = new GameSetUp("Created game Fransuh",500,600);
+        game.start();
     }
 }
