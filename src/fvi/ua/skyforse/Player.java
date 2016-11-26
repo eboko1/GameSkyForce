@@ -11,7 +11,10 @@ import java.rmi.dgc.Lease;
 public class Player implements KeyListener {
     private int x;
     private int y;
-    private boolean left,right;
+    private boolean left,right,fire;
+
+    private long current;
+    private long delay;
 
 
     public  Player(int x, int y){
@@ -21,18 +24,28 @@ public class Player implements KeyListener {
     }
     public void init(){
         Display.frame.addKeyListener(this);
+        current=System.nanoTime();
+        delay=100;
 
     }
 
     //
     public void  tick(){
         if (left){
+            if (x>=50){
             x=x-1;
-        }
+        }}
         if (right){
+            if (x<=450-30){
             x=x+1;
+        }}
+        if (fire) {
+            long breaks = System.nanoTime() - current / 100000;
+            if (breaks > delay) {
+                GameManager.bullet.add(new Bullet(x + 12, y));
+            }
+            current = System.nanoTime();
         }
-
     }
     public  void render(Graphics gr){
         gr.setColor(Color.red);
@@ -46,6 +59,9 @@ public class Player implements KeyListener {
         if (source==KeyEvent.VK_RIGHT){
             right=true;
         }
+        if (source==KeyEvent.VK_B){
+            fire=true;
+        }
     }
     public  void  keyReleased(KeyEvent e){
         int source = e.getKeyCode();
@@ -55,6 +71,10 @@ public class Player implements KeyListener {
         if (source==KeyEvent.VK_RIGHT){
             right=false;
         }
+        if (source==KeyEvent.VK_B){
+            fire=false;
+        }
+
     }
     public  void  keyTyped(KeyEvent e){}
 
