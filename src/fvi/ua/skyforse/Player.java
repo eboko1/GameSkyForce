@@ -33,11 +33,11 @@ public class Player implements KeyListener {
     public void  tick(){
         if (left){
             if (x>=50){
-            x=x-1;
+            x=x-2;
         }}
         if (right){
             if (x<=450-30){
-            x=x+1;
+            x=x+2;
         }}
         if (fire) {
             long breaks = System.nanoTime() - current / 100000;
