@@ -14,9 +14,15 @@ public class Bullet {
         speed=10;
     }
     public void tick(){
+
         y=y-speed;
     }
-    public int getY(){return y;};
+    public int getY(){
+        return y;
+    }
+    public int getX(){
+        return x;
+    }
     public void render(Graphics g){
         g.setColor(Color.blue);
         g.fillRect(x,y,6,10);

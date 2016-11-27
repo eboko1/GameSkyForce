@@ -70,6 +70,24 @@ public class GameManager {
 
         //gr.fillRect(0,0,80,80);
 
+        //collision of enemy and player r1=enemies   r2 = bullet
+       for (int i=0;i<enemies.size();i++){
+           int eX=enemies.get(i).getX();
+           int eY=enemies.get(i).getY();
+
+           for (int j=0;j<bullet.size();j++){
+               int bX=bullet.get(j).getX();
+               int bY=bullet.get(j).getY();
+
+               if (eX<bX+6 && eX+25>bX && eY<bY+6 && eY+25>bY){
+                   enemies.remove(i);
+                   i--;
+                   bullet.remove(j);
+                   j--;
+               }
+           }
+
+       }
     }
 
 }
