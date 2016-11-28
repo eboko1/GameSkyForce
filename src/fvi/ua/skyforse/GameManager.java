@@ -26,7 +26,7 @@ public class GameManager {
         bullet=new ArrayList<Bullet>();
         enemies=new ArrayList<Enemy>();
         current=System.nanoTime();
-        delay=800;
+        delay=900;
     }
     public void tick(){
         player.tick();
