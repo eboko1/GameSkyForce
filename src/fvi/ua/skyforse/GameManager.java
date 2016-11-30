@@ -61,20 +61,36 @@ public class GameManager {
         }
         current=System.nanoTime();//pause of time
         }
+
+
         //enemies
+
         for(int i=0;i<enemies.size();i++){
             if (!(enemies.get(i).getX()<=50 || enemies.get(i).getX()>=450-25 || enemies.get(i).getY()>=450-25)) {
-                if (enemies.get(i).getY()>=50){
-            enemies.get(i).render(gr);}}
+            if (enemies.get(i).getY()>=50){
+            enemies.get(i).render(gr);}
+            }
         }
-
-        //gr.fillRect(0,0,80,80);
-
-        //collision of enemy and player r1=enemies   r2 = bullet
-       for (int i=0;i<enemies.size();i++){
+             //gr.fillRect(0,0,80,80);
+             //collision of enemy and player r1=enemies   r2 = bullet
+           for (int i=0;i<enemies.size();i++){
            int eX=enemies.get(i).getX();
            int eY=enemies.get(i).getY();
 
+
+               // pX- playerX
+           int pX=player.getX();
+           int pY=player.getY();
+           if (pX<eX+25 && pX+30>eX && pY<eY+25 && pY+30>eY && pY+30>eY){
+               enemies.remove(i);
+               i--;
+
+           }
+
+
+
+
+           //bullets
            for (int j=0;j<bullet.size();j++){
                int bX=bullet.get(j).getX();
                int bY=bullet.get(j).getY();

@@ -22,6 +22,12 @@ public class Player implements KeyListener {
         this.y=y;
 
     }
+    public int getY(){
+        return y;
+    }
+    public int getX(){
+        return x;
+    }
     public void init(){
         Display.frame.addKeyListener(this);
         current=System.nanoTime();
