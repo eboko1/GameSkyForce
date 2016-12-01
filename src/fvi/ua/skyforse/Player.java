@@ -60,7 +60,7 @@ public class Player implements KeyListener {
         }
     }
     public  void render(Graphics gr){
-        gr.setColor(Color.green);
+        gr.setColor(Color.red);
         gr.fillRect(x,y,30,30);
     }
     public  void  keyPressed(KeyEvent e){

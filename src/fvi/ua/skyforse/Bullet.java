@@ -24,7 +24,7 @@ public class Bullet {
         return x;
     }
     public void render(Graphics g){
-        g.setColor(Color.black);
+        g.setColor(Color.green);
         g.fillRect(x,y,6,10);
     }
 
