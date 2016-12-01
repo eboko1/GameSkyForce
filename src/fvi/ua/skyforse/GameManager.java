@@ -10,11 +10,16 @@ import java.util.Random;
 public class GameManager {
     private Player player;
 
+
     public static ArrayList<Bullet> bullet;
     public static ArrayList<Enemy> enemies;
 
     private long current;
     private long delay;
+
+
+    private int  health;
+
 
     public GameManager(){
 
@@ -84,6 +89,12 @@ public class GameManager {
            if (pX<eX+25 && pX+30>eX && pY<eY+25 && pY+30>eY && pY+30>eY){
                enemies.remove(i);
                i--;
+               health--;
+               System.out.println(health);
+               if (health<=0){
+                   player.setHealth(0);
+
+               }
 
            }
 

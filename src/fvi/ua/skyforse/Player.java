@@ -15,6 +15,7 @@ public class Player implements KeyListener {
 
     private long current;
     private long delay;
+    private int health;
 
 
     public  Player(int x, int y){
@@ -35,6 +36,11 @@ public class Player implements KeyListener {
 
     }
 
+
+    public void setHealth(int health){
+        this.health=health;
+
+    }
     //
     public void  tick(){
         if (left){
@@ -54,7 +60,7 @@ public class Player implements KeyListener {
         }
     }
     public  void render(Graphics gr){
-        gr.setColor(Color.red);
+        gr.setColor(Color.green);
         gr.fillRect(x,y,30,30);
     }
     public  void  keyPressed(KeyEvent e){
