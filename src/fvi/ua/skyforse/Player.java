@@ -29,34 +29,38 @@ public class Player implements KeyListener {
     public int getX(){
         return x;
     }
-    public void init(){
-        Display.frame.addKeyListener(this);
-        current=System.nanoTime();
-        delay=100;
-
-    }
-
 
     public void setHealth(int health){
         this.health=health;
 
     }
-    //
-    public void  tick(){
-        if (left){
-            if (x>=50){
-            x=x-2;
-        }}
-        if (right){
-            if (x<=450-30){
-            x=x+2;
-        }}
-        if (fire) {
-            long breaks = System.nanoTime() - current / 100000;
-            if (breaks > delay) {
-                GameManager.bullet.add(new Bullet(x + 12, y));
+
+    public void init(){
+        Display.frame.addKeyListener(this);
+        current=System.nanoTime();
+        delay=100;
+        health=3;
+    }
+
+    public void  tick() {
+        if (!(health <= 0)) {
+            if (left) {
+                if (x >= 50) {
+                    x = x - 4;
+                }
             }
-            current = System.nanoTime();
+            if (right) {
+                if (x <= 450 - 30) {
+                    x = x + 4;
+                }
+            }
+            if (fire) {
+                long breaks = System.nanoTime() - current / 100000;
+                if (breaks > delay) {
+                    GameManager.bullet.add(new Bullet(x + 12, y));
+                }
+                current = System.nanoTime();
+            }
         }
     }
     public  void render(Graphics gr){

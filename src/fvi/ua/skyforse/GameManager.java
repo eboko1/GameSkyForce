@@ -62,7 +62,9 @@ public class GameManager {
             Random rand=new Random();
             int randX=rand.nextInt(450);
             int randY=rand.nextInt(450);
+            if (health>0){
             enemies.add(new Enemy(randX,-randY));
+            }
         }
         current=System.nanoTime();//pause of time
         }
@@ -98,10 +100,7 @@ public class GameManager {
 
            }
 
-
-
-
-           //bullets
+                //bullets
            for (int j=0;j<bullet.size();j++){
                int bX=bullet.get(j).getX();
                int bY=bullet.get(j).getY();
