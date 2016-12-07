@@ -94,7 +94,7 @@ public class GameManager {
                health--;
                System.out.println(health);
                if (health<=0){
-                   player.setHealth(0);
+                 player.setHealth(0);
 
                }
 
