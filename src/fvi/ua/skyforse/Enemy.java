@@ -17,7 +17,7 @@ public void tick(){
 
 }
 public void render (Graphics g){
-    g.setColor(Color.red);
+    g.setColor(Color.yellow);
     g.fillOval(x,y,25,25);
 }
   public int getX(){
