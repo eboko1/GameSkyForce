@@ -31,6 +31,7 @@ import java.awt.*;
 
      canvas = new Canvas();
      canvas.setPreferredSize(new Dimension(width,height));
+
      canvas.setBackground(new Color(212,154,140));
      canvas.setFocusable(false);
 

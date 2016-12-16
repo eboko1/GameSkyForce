@@ -24,6 +24,7 @@ public class GameSetUp implements  Runnable {
     private Thread thread;
     private Display display;
     private GameManager manager;
+
     public static final int gameWidth=400;
     public static final int gameHeight=400;
 
