@@ -13,7 +13,7 @@ public class Player implements KeyListener {
     private int y;
     private boolean left,right,fire;
 
-    private long current;
+    private long current;//ток
     private long delay;
     private int health;
 

@@ -2,11 +2,10 @@ package fvi.ua.skyforse;
 
 import javax.swing.*;
 import java.awt.*;
+                        //Created by Vika on 24.11.2016
 
-/**
- * Created by Vika on 24.11.2016.
- */
-public class Display {
+ public class Display {
+
    private  String title;
     private int width;
     private int height;
